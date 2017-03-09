@@ -1,8 +1,10 @@
 /* jshint node: true */
+const SERVER_HOST = "";
 
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'twocket-client',
+    podModulePrefix: 'twocket-client/pods',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
@@ -18,8 +20,14 @@ module.exports = function(environment) {
     },
 
     APP: {
+      SOCKET_URL: 'ws://localhost:4000'
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    DS: {
+      host: 'http://localhost:4000',
+      namespace: 'api'
     }
   };
 
@@ -43,7 +51,8 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
+    ENV.DS.host = `https://${SERVER_HOST}`
+    ENV.APP.SOCKET_URL = `wss://${SERVER_HOST}`
   }
 
   return ENV;

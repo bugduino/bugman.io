@@ -1,0 +1,7 @@
+<h1>Hello World</h1>
+
+{{#each socket.messages as |msg|}}
+  <p>MSG: {{msg.body.text}}</p>
+{{/each}}
+
+{{outlet}}
