@@ -1,0 +1,12 @@
+body {
+  margin: 0px;
+}
+
+.leaflet-container {
+  height: 100vh;
+  width: 100vw;
+}
+.tweets--list {
+  height: 50vh;
+  overflow: scroll;
+}

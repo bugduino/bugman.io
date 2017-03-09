@@ -1,5 +1,8 @@
 {
   "name": "twocket-client",
   "dependencies": {
+    "leaflet": ">=1.0.3",
+    "leaflet.markercluster": "~1.0.0",
+    "heatmap.js-amd": "^2.0.5"
   }
 }
