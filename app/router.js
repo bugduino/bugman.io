@@ -7,7 +7,7 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // this.route('tweets');
+  this.route('twocket');
 });
 
 export default Router;

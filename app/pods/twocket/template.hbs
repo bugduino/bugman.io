@@ -1,0 +1,31 @@
+<div class="twocketMap">
+  {{#leaflet-map lat=lat lng=lng zoom=zoom maxZoom=maxZoom as |layers|}}
+    {{#layer-group name="Dark" baselayer=true default=true}}
+      {{tile-layer url=map.url attribution=map.attribution}}
+    {{/layer-group}}
+
+    {{#layer-group name="Light" baselayer=true}}
+      {{tile-layer url=map.urlLight attribution=map.attribution}}
+    {{/layer-group}}
+
+    {{#layer-group name="Heatmap" default=true}}
+      {{heatmap-layer data=model options=heatOptions}}
+    {{/layer-group}}
+
+    {{!-- {{#layer-group name="Clusters" default=false}}
+      {{#marker-cluster-layer}}
+        {{#each model as |tw|}}
+          {{#marker-layer location=tw.coordinates.location as |marker|}}
+            {{#popup-layer}}
+              {{tw.text}}
+            {{/popup-layer}}
+          {{/marker-layer}}
+        {{/each}}
+      {{/marker-cluster-layer}}
+    {{/layer-group}} --}}
+
+    {{layer-control handler=(action "layerControlEvent")}}
+  {{/leaflet-map}}
+</div>
+
+{{outlet}}
