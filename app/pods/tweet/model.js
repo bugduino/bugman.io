@@ -3,7 +3,7 @@ const { attr, Model } = DS;
 
 // See https://dev.twitter.com/overview/api/tweets
 export default Model.extend({
-  markerImg: "marker.png",
+  value: 0.1,
 
   coordinates: attr('coordinate'),
   createdAt: attr('string'),

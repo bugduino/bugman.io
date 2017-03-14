@@ -1,9 +1,12 @@
 import Ember from 'ember';
 const { get, Controller, inject } = Ember;
-const MAP = {
-  url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-  attribution: `Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,
-    <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>`
+
+const NULL_ISLAND = {lat: 0, lng: 0};
+const CARTO_MAP = {
+  url: 'http://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png',
+  urlLight: 'http://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}.png',
+  attribution: `© <a href="http://carto.com/attribution" target="_blank" title="http://carto.com/attribution">CARTO</a>,
+    © <a href="http://www.openstreetmap.org/copyright" target="_blank" title="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors`
 };
 
 export default Controller.extend({
@@ -12,22 +15,20 @@ export default Controller.extend({
     this._super(...arguments);
     get(this, 'socket');
   },
-  map: MAP,
+  map: CARTO_MAP,
   heatOptions: {
     latField: 'coordinates.location.lat',
     lngField: 'coordinates.location.lng',
-    scaleRadius: true,
-    radius: 0.3,
+    // scaleRadius: true,
     // maxOpacity: 0.8,
-    // useLocalExtrema: true
+    radius: 2,
+    minOpacity: 0.33
   },
-  // geoJSON
-  // bounds: computed('geoJSON', function() {
-  //   const boundaries = A(get(this, 'geoJSON.features.firstObject.geometry.coordinates.firstObject'));
-  //   return L.latLngBounds(boundaries);
-  // }),
-  lat: 0,
-  lng: 0,
+  lat: NULL_ISLAND.lat,
+  lng: NULL_ISLAND.lng,
   zoom: 3,
-  maxZoom: 18
+  maxZoom: 10,
+  actions: {
+    layerControlEvent() {}
+  }
 });

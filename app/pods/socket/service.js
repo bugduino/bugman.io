@@ -25,9 +25,7 @@ export default Service.extend({
       .receive("ok", resp => console.log("Joined successfully", resp))
       .receive("error", resp => console.log("Unable to join", resp));
 
-    channel.on(channelEvent, payload =>
-      get(this, 'store').pushPayload(payload);
-    );
+    channel.on(channelEvent, payload => get(this, 'store').pushPayload(payload));
 
     set(this, 'channel', channel);
   }

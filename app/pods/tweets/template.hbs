@@ -1,0 +1,11 @@
+<div class="tweets--list">
+  {{#if isLoading}}
+    Loading...
+  {{else if tweets}}
+    {{#each tweets as |tw|}}
+      <p>MSG: {{tw.text}}</p>
+    {{/each}}
+  {{else if errors}}
+    {{errors}}
+  {{/if}}
+</div>
