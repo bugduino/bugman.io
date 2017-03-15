@@ -1,0 +1,37 @@
+<h1>CNC Feeds and Speeds calculator</h1>
+<h4>ChipLoad x CutterDiameter x NumOfFlutes x SpindleSpeed = FeedRate</h4>
+
+{{!-- select tool <br> --}}
+{{!-- select material --}}
+
+<section>
+  <ul class="list--noBullet">
+    <li>ChipLoad: feed per tooth (amount of material cut, inche per tooth)</li>
+    <li>Cutterdiameter: size of the cutting tool (inch)</li>
+    <li>NumOfFlutes: given by the tool</li>
+    <li>FeedRate: surface speed of the cutting tool (inch per minute)</li>
+    <li>SpindleSpeed: revolutions per minutes (rpm)</li>
+  </ul>
+</section>
+
+<label for="chipLoad">
+  <p>chipLoad (inch)</p>
+  {{input type='number' value=chipLoad id='chipLoad' step=0.001 min=0}} x
+</label>
+<label for="cutterDiameter">
+  <p>cutterDiameter (inch)</p>
+  {{input type='number' value=cutterDiameter id='cutterDiameter' min=0 step=0.005}} x
+</label>
+<label for="numFlutes">
+  <p>numFlutes</p>
+  {{input type='number' value=numFlutes id='numFlutes' min=1 step=1}} x
+</label>
+<label for="spindleSpeed">
+  <p>spindleSpeed</p>
+  {{input type='number' value=spindleSpeed id='spindleSpeed' step=100 min=0}} =
+</label>
+{{feedRate}} ipm
+
+<p>
+  Feedrate in mm per minute: {{feedRateInMm}}
+</p>

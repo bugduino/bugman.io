@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('twocket');
+  this.route('cnc');
 });
 
 export default Router;

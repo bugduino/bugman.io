@@ -1,35 +1,39 @@
 <div>
   <h1>Bugman</h1>
-  <ul>
-    <li>
-      <a href="https://linkedin.com/in/william-bergamo-14822860" target="_blank">
-        Linkedin
-      </a>
-    </li>
-    <li>
-      <a href="https://twitter.com/bugduino" target="_blank">
-        Twitter
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/bugduino" target="_blank">
-        Github
-      </a>
-    </li>
-    <li>
-      <a href="https://keybase.io/bugman" target="_blank">
-        Keybase
-      </a>
-    </li>
-  </ul>
+
+  <div><a class="index--link"
+    title="Linkedin"
+    href="https://linkedin.com/in/william-bergamo-14822860" target="_blank">
+    {{fa-icon "linkedin-square" size=4}}
+  </a></div>
+  <div><a class="index--link"
+    title="Twitter"
+    href="https://twitter.com/bugduino" target="_blank">
+    {{fa-icon "twitter" size=4}}
+  </a></div>
+  <div><a class="index--link"
+    title="Github"
+    href="https://github.com/bugduino" target="_blank">
+    {{fa-icon "github-alt" size=4}}
+  </a></div>
+  <div><a class="index--link"
+    title="Keybase"
+    href="https://keybase.io/bugman" target="_blank">
+    {{fa-icon "key" size=4}}
+  </a></div>
 </div>
 
 <div>
   <h3>Projects</h3>
-  <ul>
+  <ul class="index--projectsList">
     <li>
       {{#link-to 'twocket'}}
         Twocket - live twitter stream on a map
+      {{/link-to}}
+    </li>
+    <li>
+      {{#link-to 'cnc'}}
+        Cnc feed and speed calculator
       {{/link-to}}
     </li>
   </ul>

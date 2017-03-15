@@ -1,0 +1,40 @@
+body {
+  margin: 0px;
+  background-color: #ecedef;
+  color: #4d4d4d;
+  font-size: 18px;
+}
+
+.leaflet-container {
+  height: 100vh;
+  width: 100vw;
+}
+.tweets--list {
+  padding-left: 1em;
+  padding-right: 1em;
+  height: 50vh;
+  overflow-y: scroll;
+}
+
+.roboto {
+  font-family: "Roboto";
+}
+.josefinSlab {
+  font-family: "Josefin Slab";
+}
+
+.application--container {
+  text-align: center;
+}
+
+.index--link {
+  color: #4d4d4d;
+
+  &:hover {
+    color: red;
+  }
+}
+.list--noBullet,
+.index--projectsList {
+  list-style: none;
+}

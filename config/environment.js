@@ -28,6 +28,17 @@ module.exports = function(environment) {
     DS: {
       host: 'http://localhost:4000',
       namespace: 'api'
+    },
+
+    googleFonts: [
+      'Josefin+Slab:100,300,400,700',
+      'Roboto:300'
+    ],
+
+    // Set or update content security policies
+    contentSecurityPolicy: {
+    'font-src': "'self' fonts.gstatic.com",
+    'style-src': "'self' fonts.googleapis.com"
     }
   };
 
